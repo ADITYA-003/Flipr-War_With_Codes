@@ -2,33 +2,38 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import Form from './Form'
+import Button from './components/Button'
+import { useAuth0 } from "@auth0/auth0-react";
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
+  const { logout } = useAuth0();
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <li>{isAuthenticated && 
+    <div>
+      <img src={user.picture} alt={user.name} />
+    <p>{user.name}</p>
+    <p>{user.email}</p>
+    </div>
+    }
+    
+    </li>
+    {isAuthenticated ? 
+    <li>
+     <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+     Log Out
+   </button>
+   </li> :  
+   <li>
+   <button onClick={() => loginWithRedirect()}>Log In</button>;
+   </li>
+  }
+    
+   
+    {/* <Form/> */}
+    {/* <Button/> */}
+      </>
   )
 }
 
