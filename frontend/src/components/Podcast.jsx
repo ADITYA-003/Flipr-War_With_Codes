@@ -1,35 +1,37 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+
 const Podcast = () => {
     const [PodcastData, setPodcastData] = useState([])
     // const navigate = useNavigate();
-      useEffect(()=>{
-        const Podcast1 = async (e) => {
-            // console.log(formData);
-            // console.log(PodcastData)
+    
+        const fetchPodcast = async (e) => {
+         
             try {
-              const res = await axios.get('http://localhost:8081/post', PodcastData);
+              const res = await axios.get('http://localhost:8082/post', PodcastData);
+              setPodcastData(res.data)
               console.log(res);
             //   setPodcastData(true);
             } catch (err) {
               console.log(err);
             }
           };
-        //   Podcast1();
-      },[]
-      
-      )  
+    
+  
   return (
     <div>
-      <button onClick={Podcast1}>Displaydata</button>
-      <ul>
-  {PodcastData.map(item => (
-    <li key={item.Pid}>{item.Pcategory}</li>
+    
+      <button onClick={fetchPodcast}>Displaydata</button>
+
+  {PodcastData.map(user => (
+    <div key={user.Pid}>
+      "Podcast Name: {user.Pname}, "Podcast Description: {user.Pdescription}, "Podcast category":{user.Pcategory}</div>
+
+      
   ))}
-</ul>
-{/* <button onClick={() => {navigate(`/post/${post.Pid}`)}}>View</button> */}
+<input type="file" />
+
+
     </div>
   )
 }
