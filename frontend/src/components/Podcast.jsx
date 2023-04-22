@@ -48,7 +48,7 @@ const Podcast = () => {
  
     const handleOnSubmit = async(e)=>{
       e.preventDefault();
-      
+    
       let bs64 = await toBase64(file); 
       console.log(bs64);
       
@@ -57,9 +57,9 @@ const Podcast = () => {
         ...data,
         pbinaryfile:objectData
       }); */
-      console.log("pname",data.pbinaryfile)
-      
 
+      
+    
 
       const res =await axios.post("http://localhost:8082/post",{...data,pbinaryfile:bs64});
       console.log(res);
@@ -113,6 +113,7 @@ const Podcast = () => {
   });
 
 }} >
+ <option value="">Select category</option>
   <option value="audio">Audio</option>
   <option value="Video">Video</option>
 </select>
