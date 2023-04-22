@@ -134,4 +134,4 @@ const Podcast = () => {
   )
 }
 
-export default Podcast
+export default Podcast;

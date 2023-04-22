@@ -13,7 +13,7 @@ const mongoose = require("mongoose");
 //mongodb://127.0.0.1:27017/dbname
 //const conn_str = "mongodb://localhost:27017/tcet"
 const connToMongodDb = () =>{
-	const conn_str = "mongodb+srv://flipr:warwithcode@flipr.t9vbctd.mongodb.net/test"
+	const conn_str = "mongodb+srv://flipr:warwithcode@flipr.t9vbctd.mongodb.net/flipr"
 	mongoose.connect(conn_str, { useNewUrlParser: true, useUnifiedTopology: true })
 		.then(() => console.log("Connected to Mongo..."))
 		.catch( (error) => console.log(error) );
