@@ -1,29 +1,24 @@
 const express = require('express')
 const app = express();
 const cors = require('cors')
-const PORT = 8080;
+const PORT = 8081;
 
 app.use(express.json());
 app.use(cors());
 
 const posts = [
   {
-    id: 0,
-    content: 'Welcome to my first post',
-  },
-  {
-    id: 1,
-    content: 'Welcome to my second post',
-  },
-  {
-    id: 2,
-    content: 'Welcome to my third post',
-  },
+    Pid:0,
+ Pname: "Spooky Stories",
+Pdescription: "Japan ke Kuchh Aise Urban Legend ki kahani aaj mai apke samne le kar a...",
+Pcategory : "Audio",
+//  Pimage: BinData(0, 11)
+  }
 ];
 
-app.get('/', (req, res) => {
-  res.send('Simple backend server');
-});
+// app.post('/', (req, res) => {
+//   res.send(posts);
+// });
 
 // app.get('/posts', (req, res) => {
 //   res.json(posts);
@@ -34,13 +29,14 @@ app.get('/', (req, res) => {
 //   res.json(posts[postId - 1]);
 // });
 
-// app.post('/login', (req, res) => {
-//   const post = req.body;
-//   console.log(post);
-//   // authenticate the user
-//   // login the user
-//   return res.json({ login: true });
-// });
+app.get('/post', (req, res) => {
+  const post = req.body;
+  console.log(post);
+  res.send(posts)
+  // authenticate the user
+  // login the user
+  // return res.json({ login: true });
+});
 
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)

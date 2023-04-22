@@ -5,6 +5,7 @@ import './App.css'
 import Form from './Form'
 import Button from './components/Button'
 import { useAuth0 } from "@auth0/auth0-react";
+import Podcast from './components/Podcast'
 function App() {
   const { loginWithRedirect, user, isAuthenticated } = useAuth0();
   const { logout } = useAuth0();
@@ -29,7 +30,7 @@ function App() {
    <button onClick={() => loginWithRedirect()}>Log In</button>;
    </li>
   }
-    
+    <Podcast/>
    
     {/* <Form/> */}
     {/* <Button/> */}
