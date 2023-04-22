@@ -54,9 +54,7 @@ const Podcast = () => {
       console.log(bs64)
       setShowFile(bs64)
  /*      formData.append('file', bs64); */
- const formData = new FormData();
-      formData.append("data",data)
-      formData.append("img", showFile)
+
       const res =await axios.post("http://localhost:8082/post",formData);
       console.log(res);
       setFile(null)
