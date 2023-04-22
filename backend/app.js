@@ -47,7 +47,10 @@ Pimage:""
 app.post('/post', async (req, res) => {
 /*   console.log(req.body.file) */
 
-  const postData= Post({PBinImage: req.body.file})
+  const postData= Post({Pname:req.body.pname, Pdescription:req.body.pdescr,
+    Pcategory:req.body.pcategory,
+    PBinImage: req.body.file})
+
   console.log(postData)
   try {
     await postData.save();
