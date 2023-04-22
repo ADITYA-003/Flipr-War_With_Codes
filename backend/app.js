@@ -49,7 +49,7 @@ app.post('/post', async (req, res) => {
 
   const postData= Post({Pname:req.body.pname, Pdescription:req.body.pdescr,
     Pcategory:req.body.pcategory,
-    PBinImage: req.body.file})
+    PBinImage: req.body.pbinaryfile})
 
   console.log(postData)
   try {
