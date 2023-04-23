@@ -13,7 +13,7 @@ const mongoose = require("mongoose");
 //mongodb://127.0.0.1:27017/dbname
 //const conn_str = "mongodb://localhost:27017/tcet"
 const connToMongodDb = () =>{
-	const conn_str = "mongodb+srv://flipr:warwithcode@flipr.t9vbctd.mongodb.net/test"
+	const conn_str = "mongodb+srv://flipr:warwithcode@flipr.t9vbctd.mongodb.net/flipr"
 	mongoose.connect(conn_str, { useNewUrlParser: true, useUnifiedTopology: true })
 		.then(() => console.log("Connected to Mongo..."))
 		.catch( (error) => console.log(error) );
@@ -27,13 +27,9 @@ const posts = [
 Pdescription: "Japan ke Kuchh Aise Urban Legend ki kahani aaj mai apke samne le kar a...",
 Pcategory : "Audio",
 Pimage:""
-//  Pimage: BinData(0, 11)
+
   }
 ];
-
-// app.post('/', (req, res) => {
-//   res.send(posts);
-// });
 
 // app.get('/posts', (req, res) => {
 //   res.json(posts);
@@ -44,12 +40,23 @@ Pimage:""
 //   res.json(posts[postId - 1]);
 // });
 
-app.post('/post', async (req, res) => {
+app.get('/post', async(req, res)=>{
+  try {
+    const posts = await Post.find();
+    res.json(posts);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Server Error")
+  }
+})
+
+app.post('/upload', async (req, res) => {
 /*   console.log(req.body.file) */
 
   const postData= Post({Pname:req.body.pname, Pdescription:req.body.pdescr,
     Pcategory:req.body.pcategory,
-    PBinImage: req.body.file})
+    
+    PBinImage: req.body.pbinaryfile})
 
   console.log(postData)
   try {

@@ -1,2 +1,12 @@
 IPL :- https://open.spotify.com/episode/7LynxOAtanLYeZue7CF5gD
 triggu:- https://open.spotify.com/genre/0JQ5DAqbMKFNr6gDrHHVKL
+
+valen = "https://open.spotify.com/embed/episode/0SVVNNPXIcHkDdeVWTQvVl"
+
+mahabharata = "https://open.spotify.com/episode/1x1YHdOpYAjwR48eoz1yLL"
+
+ranveer_show = "https://open.spotify.com/episode/6zFzCgEhWtWZUsnVADNdmS?go=1&sp_cid=df20ebbeef42952fa28cff02a26042da&utm_source=embed_player_p&utm_medium=desktop&nd=1"
+
+spotify_original = "https://open.spotify.com/episode/2xMsT76dPbRAxazxFq9krB?go=1&sp_cid=df20ebbeef42952fa28cff02a26042da&utm_source=embed_player_p&utm_medium=desktop&nd=1"
+
+anurag-verma = "https://open.spotify.com/episode/2Hd3NssmftoTO25SmP50Qk?go=1&sp_cid=df20ebbeef42952fa28cff02a26042da&utm_source=embed_player_p&utm_medium=desktop&nd=1"
