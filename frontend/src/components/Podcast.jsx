@@ -18,7 +18,7 @@ const Podcast = () => {
     }
     );  
     // const navigate = useNavigate();
-    
+    /* 
         const fetchPodcast = async (e) => {
          
             try {
@@ -29,7 +29,7 @@ const Podcast = () => {
             } catch (err) {
               console.log(err);
             }
-          };
+          }; */
     const handleChange = (e) =>{
         const inputfile = e.target.files[0]
         setFile(inputfile)
@@ -76,14 +76,14 @@ const Podcast = () => {
   return (
     <div>
     
-      <button onClick={fetchPodcast}>Displaydata</button>
+      {/* <button onClick={fetchPodcast}>Displaydata</button>
 
   {PodcastData.map(user => (
     <div key={user.Pid}>
       "Podcast Name: {user.Pname}, "Podcast Description: {user.Pdescription}, "Podcast category":{user.Pcategory}</div>
 
       
-  ))}
+  ))} */}
 <br /><br />
 
 <form onSubmit={handleOnSubmit}>
