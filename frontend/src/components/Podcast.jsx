@@ -76,38 +76,38 @@ const Podcast = () => {
   return (
     <div>
     
-      {/* <button onClick={fetchPodcast}>Displaydata</button>
+      <button onClick={fetchPodcast}>Displaydata</button>
 
   {PodcastData.map(user => (
-    <div key={user.Pid}>
-      "Podcast Name: {user.Pname}, "Podcast Description: {user.Pdescription}, "Podcast category":{user.Pcategory}</div>
+    <div  key={user.Pid}>
+      "Podcast Name": {user.Pname}, "Podcast Description": {user.Pdescription}, "Podcast category":{user.Pcategory}</div>
 
       
   ))} */}
 <br /><br />
 
-<form onSubmit={handleOnSubmit}>
-<label>
+<form style={{padding:"62px"}} onSubmit={handleOnSubmit}>
+<label style={{padding:"42px",fontSize:"34px"}}>
  Podcast Name
-</label>  <input type="text" value = {data.pname}  onChange={(e) => {
+</label>  <input type="text" value = {data.pname} id ="pname" onChange={(e) => {
               setData({
                 ...data,
                 pname: e.target.value,
               });
             }}/> 
 <br />
-<label>
+<label style={{padding:"42px",fontSize:"34px"}}>
  Podcast Description
-</label>  <input type="text" value = {data.pdescr}  onChange={(e)=>{
+</label>  <input type="text" value = {data.pdescr} id ="pdescr" onChange={(e)=>{
   setData({
     ...data,
     pdescr: e.target.value,
   });
 }}/><br />
 
-<label>Choose a category:</label> 
+<label style={{border:"2px",padding:"22px",margin:"22px",fontSize:"34px"}}>Choose a category:</label> 
 
-<select name="cat"  value = {data.pcategory}  id="category" onChange={(e)=>{
+<select style={{border:"2px solid red",paddingRight:"4px",paddingTop:"8px",margin:"12px"}} name="cat"  value = {data.pcategory}  id="category" onChange={(e)=>{
   setData({
     ...data,
     pcategory: e.target.value,
@@ -121,9 +121,9 @@ const Podcast = () => {
 </select>
 <br />
 
-<input type="file" onChange={handleChange} />
+<input type="file" value ={data.Pfile} onChange={handleChange} />
 <br /><br />
-<button type='submit' >Submit</button>
+<button style={{padding:"12px",background:"#646cff",color:"white"}} type='submit' >Submit</button>
 </form>
 
 <hr />
