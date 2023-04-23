@@ -6,6 +6,7 @@ const User = () => {
     const onHandleClick = async() =>{
         const fetchData = await axios.get("http://localhost:8082/post", postData);
         setPostData(fetchData.data);
+        
        
     }
   return (
