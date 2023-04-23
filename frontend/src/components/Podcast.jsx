@@ -1,13 +1,12 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios';
 
-
+import '../components/ImageDetails.css'
 
 const Podcast = () => {
     const [PodcastData, setPodcastData] = useState([])  // this is used to store the podcast info 
     const [file, setFile] = useState([]);  // this is used to store podcast images files
     const [preview, setPreview] = useState(null); // this is used to store the blob url of the image
-
     const [data, setData] = useState({
       pname:"",
       pdescr:"",
@@ -15,6 +14,19 @@ const Podcast = () => {
   /*     pbinaryfile: "" */
     }
     );  
+
+    const convertBs64 = (e) =>{
+      console.log(e)
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload = () =>{
+          console.log(reader.result); //base64encoded string
+          setData({...data,Pimage:reader.result});
+      };
+      reader.onerror  = error =>{
+          console.log("Error: ", error);
+      };
+  }
     // const navigate = useNavigate();
     /* 
         const fetchPodcast = async (e) => {
@@ -28,7 +40,7 @@ const Podcast = () => {
               console.log(err);
             }
           }; */
-    const handleChange = async (e) =>{
+  /*   const handleChange = async (e) =>{
         const inputfile = e.target.files[0]
         setFile(inputfile)
 
@@ -38,7 +50,7 @@ const Podcast = () => {
         setData({...data,pimgblob:imgBlob})
         console.log(imgBlob)
         
-      }  
+      }   */
       
 
     const handleOnSubmit = async(e)=>{
@@ -51,12 +63,12 @@ const Podcast = () => {
       console.log(res);
 /* 
       const res =await axios.post("http://localhost:8082/upload",{...data,pbinaryfile:bs64}); */
-      
+
       setFile(null)
       setPreview(null)
   
     } 
-  const myFunction = () =>{}
+ 
   return (
     <div>
     
@@ -97,17 +109,25 @@ const Podcast = () => {
   <option value="Video">Video</option>
 </select>
 <br />
+<div className='wrapper'>
+    <div className='childWrapper'>
+        <input className='inputFile' 
+        accept="image/*"
+        type = "file"
+        onChange={convertBs64} />
 
-<input type="file" value ={data.Pfile} onChange={handleChange} />
+        {data && <img  height={100} widht= {100} src={data.Pimage} alt="" />}
+    </div>
+  </div>
+{/* <input type="file" value ={data.Pfile} onChange={handleChange} /> */}
 <br /><br />
 <button style={{padding:"12px",background:"#646cff",color:"white"}} type='submit' >Submit</button>
 </form>
 
 <hr />
 <h1>Preview</h1>
-{preview && <img src={preview} alt=""/>}
+{preview && <img src={data.Pimage} alt=""/>}
 <hr />
-
 
     </div>
   )

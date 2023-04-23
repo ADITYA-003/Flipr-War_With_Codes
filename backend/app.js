@@ -47,7 +47,7 @@ app.post('/upload', async (req, res) => {
   const postData= Post({Pname:req.body.pname, Pdescription:req.body.pdescr,
     Pcategory:req.body.pcategory,
     
-    PImgBlob: req.body.pimgblob})
+    PImage: req.body.Pimage})
 
   console.log(postData)
   try {
