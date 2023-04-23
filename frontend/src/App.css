@@ -39,7 +39,7 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #6f6161;
 }
 body {
   margin: 0;
@@ -110,4 +110,10 @@ body {
 }
 .center .inputbox:hover [type="button"] {
   background: linear-gradient(45deg, greenyellow, dodgerblue);
+}
+.button-login{
+  position: absolute;
+  top:12px;
+  right:30px;
+  list-style-type: none;
 }

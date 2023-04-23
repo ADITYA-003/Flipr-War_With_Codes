@@ -1,0 +1,9 @@
+.header-top{
+    top: 32px;
+    left: 500px;
+    color: rgb(21, 21, 182);
+    position: absolute;
+    font-weight: bolder;
+    font-style: italic;
+    text-underline-offset: 12px;
+}
