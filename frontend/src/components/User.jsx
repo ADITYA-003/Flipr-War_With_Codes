@@ -23,7 +23,7 @@ const User = () => {
       {postData.map(user => (
     <div key={user._id}>
       "Podcast Name: {user.Pname}, "Podcast Description: {user.Pdescription}, "Podcast category":{user.Pcategory},
-      "Podcast image:{postData && <img src={user.PImgBlob} alt=''/>}
+      "Podcast image:{postData && <img src={user.PImage} alt=''/>}
      
 
       

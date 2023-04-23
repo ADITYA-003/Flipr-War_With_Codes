@@ -20,7 +20,7 @@ const Data = () => {
                 <div style={{ padding: "22px", lineHeight: "22px", borderWidth: "92px" }}>"1.Podcast Name: {user.Pname}</div>,
               <div style={{ padding: "22px" }}> "2.Podcast Description: {user.Pdescription}</div>,
               <div style={{ padding: "22px" }}> "3.Podcast category":{user.Pcategory}</div>,
-              <div>"4.Post Image:{postData && <img style={{height:"100px",width:"100px"}} src={user.PImgBlob} alt='' />}</div>
+              <div>"4.Post Image:{postData && <img style={{height:"100px",width:"100px"}} src={user.PImage} alt='' />}</div>
             </div>
 
           ))}
