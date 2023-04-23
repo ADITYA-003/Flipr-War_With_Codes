@@ -1,0 +1,18 @@
+.formData{
+   
+    display: flex;
+  
+   flex-direction: column;
+   border: 10px solid rebeccapurple;
+   
+ 
+}
+
+.formData label{
+    font-size: 24px;
+}
+
+.formData button{
+    background-color: #646cff;
+    color: white;
+}

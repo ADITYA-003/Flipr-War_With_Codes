@@ -1,4 +1,5 @@
 import '../components/sidebar.css'
+import User from './User';
 import React, { useState } from "react";
 import {
   RiHome4Line,
@@ -20,6 +21,10 @@ import {
   useProSidebar
 } from "react-pro-sidebar";
 function Sidebars() {
+  const [displayData, setDisplayData] = useState(false);
+  const handleDisplay = () =>{
+    setDisplayData(true);
+  }
   const { collapseSidebar } = useProSidebar();
   const [collapsed, setCollapsed] = useState(false);
 
@@ -73,7 +78,7 @@ function Sidebars() {
           </Menu>
 
           <Menu>
-            <MenuItem style={{color:"#646cff"}} icon={<RiHome4Line />}>Dashboard</MenuItem>
+            <MenuItem style={{color:"#646cff"}} icon={<RiHome4Line />} >Dashboard</MenuItem>
             <SubMenu  style={{color:"#646cff"}} defaultOpen label={"Professors"} icon={<RiTeamLine />}>
               <MenuItem icon={<RiUserFollowLine />}>Active </MenuItem>
               <MenuItem icon={<RiUserUnfollowLine />}>Ex Professors</MenuItem>
@@ -83,7 +88,8 @@ function Sidebars() {
               
             </SubMenu>
             <SubMenu  style={{color:"#646cff"}} defaultOpen label={"Records"} icon={<RiFolder2Line />}>
-              <MenuItem icon={<RiStackLine />}>Senior Students</MenuItem>
+              <MenuItem icon={<RiStackLine />} onClick={handleDisplay}>Display</MenuItem>
+                    
               <MenuItem icon={<RiPlantLine />}>Junior Students</MenuItem>
               <MenuItem icon={<RiStackLine />}>Senior Students</MenuItem>
               <MenuItem icon={<RiPlantLine />}>Junior Students</MenuItem>
