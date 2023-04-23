@@ -6,7 +6,8 @@ import Form from './Form'
 import Button from './components/Button'
 import { useAuth0 } from "@auth0/auth0-react";
 import Podcast from './components/Podcast'
-
+import Sidebars from './components/Sidebar'
+import Header from './components/Header'
 function App() {
   
   return (
@@ -31,7 +32,8 @@ function App() {
    </li>
   }
     <Podcast/>
-   
+    {/* <Header/>
+  <Sidebars/> */}
     {/* <Form/> */}
     {/* <Button/> */}
       </>
