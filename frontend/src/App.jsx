@@ -24,6 +24,7 @@ function App() {
     }
     
     </li>
+    <li style={{position:"absolute",top:"2px",right:"12px"}}>
     {isAuthenticated ? 
     <li>
      <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
@@ -34,6 +35,7 @@ function App() {
    <button onClick={() => loginWithRedirect()}>Log In</button>;
    </li>
   }
+  </li>
     <Podcast/>
      <Header/>
   <Sidebars/> 

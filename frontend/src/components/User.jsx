@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import axios from 'axios'
-
 const User = () => {
     const [postData, setPostData] = useState([]);
     const [imageData, setImageData] = useState([]);
@@ -24,14 +23,18 @@ const User = () => {
       {postData.map(user => (
     <div key={user._id}>
       "Podcast Name: {user.Pname}, "Podcast Description: {user.Pdescription}, "Podcast category":{user.Pcategory},
-      "Podcast image:{postData && <img src={user.PImage} alt=''/>} 
+      "Podcast image:{postData && <img src={user.PImgBlob} alt=''/>}
+     
+
+      
       </div>
   ))}
+   <div>
+    
 
-  
- 
+      </div>
     </div>
   )
 }
 
-export default User
+export default User
