@@ -3,8 +3,6 @@ import axios from 'axios';
 
 
 
-
-
 const Podcast = () => {
     const [PodcastData, setPodcastData] = useState([])  // this is used to store the podcast info 
     const [file, setFile] = useState([]);  // this is used to store podcast images files
@@ -76,14 +74,7 @@ const Podcast = () => {
   return (
     <div>
     
-      <button onClick={fetchPodcast}>Displaydata</button>
 
-  {PodcastData.map(user => (
-    <div  key={user.Pid}>
-      "Podcast Name": {user.Pname}, "Podcast Description": {user.Pdescription}, "Podcast category":{user.Pcategory}</div>
-
-      
-  ))} */}
 <br /><br />
 
 <form style={{padding:"62px"}} onSubmit={handleOnSubmit}>

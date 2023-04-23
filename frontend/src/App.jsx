@@ -8,9 +8,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Podcast from './components/Podcast'
 import Sidebars from './components/Sidebar'
 import Header from './components/Header'
+import User from './components/User'
 function App() {
-  
+  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
+  const { logout } = useAuth0();
   return (
+    
     <>
     <li>{isAuthenticated && 
     <div>
@@ -32,8 +35,10 @@ function App() {
    </li>
   }
     <Podcast/>
-    {/* <Header/>
-  <Sidebars/> */}
+     <Header/>
+  <Sidebars/> 
+  <User/>
+
     {/* <Form/> */}
     {/* <Button/> */}
       </>
