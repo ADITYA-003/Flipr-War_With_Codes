@@ -20,16 +20,7 @@ const connToMongodDb = () =>{
 	}
   connToMongodDb();
   
-const posts = [
-  {
-    Pid:0,
- Pname: "Spooky Stories",
-Pdescription: "Japan ke Kuchh Aise Urban Legend ki kahani aaj mai apke samne le kar a...",
-Pcategory : "Audio",
-Pimage:""
 
-  }
-];
 
 // app.get('/posts', (req, res) => {
 //   res.json(posts);
@@ -56,7 +47,7 @@ app.post('/upload', async (req, res) => {
   const postData= Post({Pname:req.body.pname, Pdescription:req.body.pdescr,
     Pcategory:req.body.pcategory,
     
-    PBinImage: req.body.pbinaryfile})
+    PImgBlob: req.body.pimgblob})
 
   console.log(postData)
   try {

@@ -3,7 +3,7 @@ const PostSchema = new mongoose.Schema({
     Pname: String,
     Pdescription: String,
     Pcategory: String,
-    PBinImage: Buffer
+    PImgBlob: String
     
 }, );
 

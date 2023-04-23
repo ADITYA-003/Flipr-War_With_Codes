@@ -28,48 +28,34 @@ const Podcast = () => {
               console.log(err);
             }
           }; */
-    const handleChange = (e) =>{
+    const handleChange = async (e) =>{
         const inputfile = e.target.files[0]
         setFile(inputfile)
+
      
         const imgBlob = URL.createObjectURL(inputfile);
         setPreview(imgBlob)
-    }
-    const toBase64 = file =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-    });
- 
- 
+        setData({...data,pimgblob:imgBlob})
+        console.log(imgBlob)
+        
+      }  
+      
+
     const handleOnSubmit = async(e)=>{
       e.preventDefault();
     
-      let bs64 = await toBase64(file); 
-      console.log(bs64);
+   /*    let bs64 = await toBase64(file); 
+      console.log(bs64); */
       
-     
- /*      setData({
-        ...data,
-        pbinaryfile:objectData
-      }); */
-
-      
-    
-
-      const res =await axios.post("http://localhost:8082/upload",{...data,pbinaryfile:bs64});
+      const res = await axios.post("http://localhost:8082/upload",data);
       console.log(res);
+/* 
+      const res =await axios.post("http://localhost:8082/upload",{...data,pbinaryfile:bs64}); */
+      
       setFile(null)
       setPreview(null)
-     
-      
-     
-
-      
   
-    }
+    } 
   const myFunction = () =>{}
   return (
     <div>
