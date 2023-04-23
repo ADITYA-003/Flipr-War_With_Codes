@@ -61,10 +61,12 @@ const Podcast = () => {
       
     
 
-      const res =await axios.post("http://localhost:8082/post",{...data,pbinaryfile:bs64});
+      const res =await axios.post("http://localhost:8082/upload",{...data,pbinaryfile:bs64});
       console.log(res);
       setFile(null)
       setPreview(null)
+     
+      
      
 
       
