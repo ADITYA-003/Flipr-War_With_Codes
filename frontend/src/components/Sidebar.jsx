@@ -1,5 +1,6 @@
 import '../components/sidebar.css'
 import User from './User';
+import {Link} from "react-router-dom";
 import React, { useState } from "react";
 import {
   RiHome4Line,
@@ -78,7 +79,9 @@ function Sidebars() {
           </Menu>
 
           <Menu>
-            <MenuItem style={{color:"#646cff"}} icon={<RiHome4Line />} >Dashboard</MenuItem>
+            <MenuItem style={{color:"#646cff"}} icon={<RiHome4Line />} >
+              <Link to="/post" > Dashboard
+              </Link></MenuItem>
             <SubMenu  style={{color:"#646cff"}} defaultOpen label={"Professors"} icon={<RiTeamLine />}>
               <MenuItem icon={<RiUserFollowLine />}>Active </MenuItem>
               <MenuItem icon={<RiUserUnfollowLine />}>Ex Professors</MenuItem>
@@ -87,7 +90,8 @@ function Sidebars() {
               <MenuItem icon={<RiUserFollowLine />}>Active </MenuItem>
               
             </SubMenu>
-            <SubMenu  style={{color:"#646cff"}} defaultOpen label={"Records"} icon={<RiFolder2Line />}>
+            <SubMenu  style={{color:"#646cff"}} defaultOpen label={ <Link to ="/upload">AddRecords</Link> } icon={<RiFolder2Line />}>
+          
               <MenuItem icon={<RiStackLine />} onClick={handleDisplay}>Display</MenuItem>
                     
               <MenuItem icon={<RiPlantLine />}>Junior Students</MenuItem>
