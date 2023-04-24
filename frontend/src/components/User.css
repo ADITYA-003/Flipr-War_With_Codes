@@ -1,0 +1,45 @@
+.Container{
+    display: flex;
+    width: 100% ;
+    flex-direction: row;
+    border: 10px solid yellow;
+    background-color: aqua;
+ 
+}
+.Card{
+    display: flex;
+    justify-content: space-around;
+    border: 10px solid green;
+    width: 300px;
+  height: 200px;
+  border-radius: 15px;
+
+    overflow: hidden;
+    
+    
+}
+.imgDiv {
+    width: 40%;
+    position: relative;
+    display: flex;
+
+  
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgDiv img {
+    width: 80%;
+    height: auto;
+    border-radius: 15px 0 0 15px;
+  }
+  .Descr {
+    width: 60%;
+    padding: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #000000;
+    background-color: #FFFFFF;
+  }

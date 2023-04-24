@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios'
+import "../components/User.css"
 const User = () => {
     const [postData, setPostData] = useState([]);
     const [imageData, setImageData] = useState([]);
@@ -23,10 +24,22 @@ const User = () => {
       {postData.map(user => (
     <div key={user._id}>
       "Podcast Name: {user.Pname}, "Podcast Description: {user.Pdescription}, "Podcast category":{user.Pcategory},
-      "Podcast image:{postData && <img src={user.PImage} alt=''/>}
-     
+      "Podcast image:{postData && <img src={user.PImage} alt=''/>}      
+      </div>
+  
+  ))}
+  {postData.map(user=>(
 
-      
+      <div key={user._id}className='Container'>
+        <div className='Card'>
+         <div className='imgDiv'>
+         <img src={user.PImage} alt="" /><br/>
+          {user.Pname}
+         </div>
+          <div className='Descr'>
+          {user.Pdescription}
+          </div>
+        </div>
       </div>
   ))}
    <div>
