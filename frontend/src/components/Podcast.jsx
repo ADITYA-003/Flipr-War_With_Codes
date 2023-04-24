@@ -7,7 +7,7 @@ import '../components/Podcast.css'
 const Podcast = () => {
   const [PodcastData, setPodcastData] = useState([])  // this is used to store the podcast info 
   const [file, setFile] = useState([]);  // this is used to store podcast images files
-  const [preview, setPreview] = useState(null); // this is used to store the blob url of the image
+
   const [data, setData] = useState({
     pname: "",
     pdescr: "",
@@ -66,7 +66,7 @@ const Podcast = () => {
           const res =await axios.post("http://localhost:8082/upload",{...data,pbinaryfile:bs64}); */
     setData("")
     setFile(null)
-    setPreview(null)
+ 
 
   }
 

@@ -4,47 +4,23 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Form from './Form'
 import Button from './components/Button'
-import { useAuth0 } from "@auth0/auth0-react";
+
 import Podcast from './components/Podcast'
-import Sidebars from './components/Sidebar'
+import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 import User from './components/User'
+
+import Autho from './components/Autho'
+import { Routes, Route } from 'react-router-dom';
 function App() {
-  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
-  const { logout } = useAuth0();
+
   return (
     
-    <>
-    <li>{isAuthenticated && 
-    <div>
-      <img src={user.picture} alt={user.name} />
-    <p>{user.name}</p>
-    <p>{user.email}</p>
-    </div>
-    }
-    
-    </li>
-    <li style={{position:"absolute",top:"2px",right:"12px"}}>
-    {isAuthenticated ? 
-    <li>
-     <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-     Log Out
-   </button>
-   </li> :  
-   <li>
-   <button onClick={() => loginWithRedirect()}>Log In</button>;
-   </li>
-  }
-  </li>
-    <Podcast/>
-     <Header/>
-  <Sidebars/> 
-  <User/>
-
-
-    {/* <Form/> */}
-    {/* <Button/> */}
-      </>
+  <Routes>
+         <Route path='/' element={<div><Autho /><Sidebar/> </div>} />
+         <Route path='/upload' element ={<div><Autho/> <Podcast/> <Sidebar/> </div>}/>
+         <Route path='/post' element ={<div><Autho/> <User/> <Sidebar/> </div>}/>
+  </Routes>
   )
 }
 
